@@ -1,17 +1,9 @@
 n = int(input())
-
-groups = 0
-prev_magnet = ""
-
+p = list(map(int, input().split()))
+result = [0] * n
 for i in range(n):
-    current_magnet = input()
-    
-    if i == 0:
-        groups = 1
-    elif current_magnet != prev_magnet:
-        groups += 1
-    
-    prev_magnet = current_magnet
-
-print(groups)
+    receiver = p[i] - 1
+    giver = i + 1
+    result[receiver] = giver
+print(" ".join(map(str, result)))
 
